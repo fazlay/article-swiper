@@ -13,28 +13,12 @@ const AllArticles = () => {
             return new Date(secound.upvotes) - new Date(first.upvotes);
           })
         );
-        // console.log(data);
+       
       });
   }, []);
 
-  //   articles.sort(function (first, secound) {
-  //     return new Date(secound.upvotes) - new Date(first.upvotes);
-  //   });
-
-  // const handleSortByUpvotes = (articles) => {
-  //   const upvoteSortArticle = articles.sort(function (first, secound) {
-  //     return new Date(secound.upvotes) - new Date(first.upvotes);
-  //   });
-  //   setArticles([...upvoteSortArticle]);
-  // };
-  // const handleSortByDate = (articles) => {
-  //   console.log("inside date ");
-  //   const dateSortedArticle = articles.sort(function (a, b) {
-  //     return new Date(b.date) - new Date(a.date);
-  //   });
-  //   setArticles([...dateSortedArticle]);
-  // };
-
+  
+// ----------------------------------------------------------sorting Handler 
 const handleArticleSorting=(e)=>{
 switch (e.target.value) {
   case "date":
@@ -42,7 +26,7 @@ switch (e.target.value) {
       return new Date(a.date) - new Date(b.date);
     });
     setArticles([...dateSortedArticle]);
-    console.log("we called date");
+    // console.log("we called date");
     break;
 
   case "upvote":
@@ -50,7 +34,7 @@ switch (e.target.value) {
           return new Date(secound.upvotes) - new Date(first.upvotes);
         });
         setArticles([...upvoteSortArticle]);
-    console.log("we called upvote");
+    // console.log("we called upvote");
     break;
 
   default:
@@ -68,7 +52,7 @@ switch (e.target.value) {
      <div className="relative inline-flex">
         <svg
           className="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
-          xmlns="http://www.w3.org/2000/svg"
+       
           viewBox="0 0 412 232"
         >
           <path
