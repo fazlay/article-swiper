@@ -2,10 +2,10 @@ import React from "react";
 
 export const Header = () => {
   return (
-    <div className="flex justify-around bg-slate-100 py-1 border-b-2">
+    <div className="flex justify-around bg-slate-100 py-1 border-b-2 items-center">
       <div className="flex flex-row items-center  ">
-       
-        <svg
+      <img src="https://img.icons8.com/material/50/000000/nl-logo.png"/>
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-10 w-10"
           viewBox="0 0 20 20"
@@ -16,17 +16,17 @@ export const Header = () => {
             d="M10.496 2.132a1 1 0 00-.992 0l-7 4A1 1 0 003 8v7a1 1 0 100 2h14a1 1 0 100-2V8a1 1 0 00.496-1.868l-7-4zM6 9a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1zm3 1a1 1 0 012 0v3a1 1 0 11-2 0v-3zm5-1a1 1 0 00-1 1v3a1 1 0 102 0v-3a1 1 0 00-1-1z"
             clipRule="evenodd"
           />
-        </svg>
+        </svg> */}
         <h1 className="font-bold"> THE NEWS HUB</h1>
       </div>
       <div className="flex items-center">
 
         
-        <a herf="#" className="px-2 font-bold uppercase  ">Popular News</a>
-        <a herf="#" className="px-2 font-bold uppercase">About Us</a>
-        <a  herf="#" className="px-2 font-bold  uppercase">Contact Us</a>
+        <a herf="#" className="px-2 font-bold uppercase  hover:border-b-2">Popular News</a>
+        <a herf="#" className="px-2 font-bold uppercase  hover:border-b-2">About Us</a>
+        <a  herf="#" className="px-2 font-bold  uppercase  hover:border-b-2">Contact Us</a>
       </div>
-      <div><label class="relative block">
+      <div><label className="relative block">
   <span className="sr-only">Search</span>
   <span className="absolute inset-y-0 left-0 flex items-center pl-2">
     <svg className="h-5 w-5 fill-gray-300" viewBox="0 0 20 20"></svg>

@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# This is a Simple Article Swiper APP 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Link of the APP [LIVE LINK](https://jovial-poitras-62e83f.netlify.app/).
+
+
+## To run this app in your Local Environment follow below Steps
+
+## Step 1   ### `yarn`  or ### `npm install`
+
+## Step 2   ### `yarn start` or ### `npm start`
+
+## Tech Stack : React JS, Tailwind CSS, 
 
 ## Available Scripts
 

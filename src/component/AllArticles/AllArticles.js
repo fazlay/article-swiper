@@ -21,41 +21,53 @@ const AllArticles = () => {
   //     return new Date(secound.upvotes) - new Date(first.upvotes);
   //   });
 
-  const handleSortByUpvotes = (articles) => {
-    const upvoteSortArticle = articles.sort(function (first, secound) {
-      return new Date(secound.upvotes) - new Date(first.upvotes);
-    });
-    setArticles([...upvoteSortArticle]);
-  };
-  const handleSortByDate = (articles) => {
-    console.log("inside date ");
+  // const handleSortByUpvotes = (articles) => {
+  //   const upvoteSortArticle = articles.sort(function (first, secound) {
+  //     return new Date(secound.upvotes) - new Date(first.upvotes);
+  //   });
+  //   setArticles([...upvoteSortArticle]);
+  // };
+  // const handleSortByDate = (articles) => {
+  //   console.log("inside date ");
+  //   const dateSortedArticle = articles.sort(function (a, b) {
+  //     return new Date(b.date) - new Date(a.date);
+  //   });
+  //   setArticles([...dateSortedArticle]);
+  // };
+
+const handleArticleSorting=(e)=>{
+switch (e.target.value) {
+  case "date":
     const dateSortedArticle = articles.sort(function (a, b) {
-      return new Date(b.date) - new Date(a.date);
+      return new Date(a.date) - new Date(b.date);
     });
     setArticles([...dateSortedArticle]);
-  };
+    console.log("we called date");
+    break;
+
+  case "upvote":
+    const upvoteSortArticle = articles.sort(function (first, secound) {
+          return new Date(secound.upvotes) - new Date(first.upvotes);
+        });
+        setArticles([...upvoteSortArticle]);
+    console.log("we called upvote");
+    break;
+
+  default:
+    console.log("this is default funtion");
+    break;
+}
+  
+}
 
   return (
-    <div>
-      <h1>This is AALL Article Page</h1>
-      {/* <button
-        onClick={() => {
-          handleSortByDate(articles);
-        }}
-      >
-        Most Recent{" "}
-      </button>
-      <button
-        onClick={() => {
-          handleSortByUpvotes(articles);
-        }}
-      >
-        Most Upvote{" "}
-      </button> */}
-
-      <div class="relative inline-flex">
+    <div className="px-16 mt-16">
+    
+     <div className="flex justify-between border-b-2 items-center">
+      <h1 className="font-bold text-sm text-slate-400 uppercase"> Showing top 007 ARTICLES . .</h1>
+     <div className="relative inline-flex">
         <svg
-          class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
+          className="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 412 232"
         >
@@ -64,25 +76,18 @@ const AllArticles = () => {
             fill="#648299"
           />
         </svg>
-        <select class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-          <option
-            onChange={() => {
-              handleSortByDate(articles);
-            }}
-          >
-            MOST RECENT
-          </option>
-          <option
-            onChange={() => {
-              handleSortByUpvotes(articles);
-            }}
-          >
+        <select onChange={handleArticleSorting} className="border-0 font-bold text-slate-400 h-10 pl-5 pr-10 bg-white hover:text-gray-800 focus:outline-none appearance-none">
+          <option  value="upvote">
             MOST UPVOTED
+          </option>
+          <option value="date">
+            MOST RECENT
           </option>
         </select>
       </div>
+     </div>
       {articles.map((article) => (
-        <SingleArticle article={article}></SingleArticle>
+        <SingleArticle key={article.id} article={article}></SingleArticle>
       ))}
     </div>
   );
