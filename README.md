@@ -5,9 +5,9 @@
 
 ## To run this app in your Local Environment follow below Steps
 
- Step 1   ### `yarn`  or ### `npm install`
+ Step 1    `yarn`  or  `npm install`
 
-Step 2   ### `yarn start` or ### `npm start`
+Step 2    `yarn start` or  `npm start`
 
 ## Tech Stack : React JS, Tailwind CSS, 
 
