@@ -21,13 +21,18 @@ const AllArticles = () => {
   //     return new Date(secound.upvotes) - new Date(first.upvotes);
   //   });
 
-  const handleSortByUpvotes = (articles) => {};
+  const handleSortByUpvotes = (articles) => {
+    const upvoteSortArticle = articles.sort(function (first, secound) {
+      return new Date(secound.upvotes) - new Date(first.upvotes);
+    });
+    setArticles([...upvoteSortArticle]);
+  };
   const handleSortByDate = (articles) => {
     console.log("inside date ");
     const dateSortedArticle = articles.sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     });
-    return setArticles([...dateSortedArticle]);
+    setArticles([...dateSortedArticle]);
   };
 
   return (
@@ -39,6 +44,13 @@ const AllArticles = () => {
         }}
       >
         Most Recent{" "}
+      </button>
+      <button
+        onClick={() => {
+          handleSortByUpvotes(articles);
+        }}
+      >
+        Most Upvote{" "}
       </button>
       {articles.map((article) => (
         <SingleArticle article={article}></SingleArticle>
